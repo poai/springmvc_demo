@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>SpringMVC_1</display-name>
+	<!--0.添加Jar包  -->
+	<!--1.配置SpringMVC的前端控制器  -->
+	<servlet>
+		<servlet-name>dispatcher</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<!-- SpringMVC IOC容器的配置文件的路径 -->
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/springmvc.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<!-- 前端控制器拦截的资源 -->
+	<servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>
+		<!-- 拦截所有请求根(/)路径下的资源 -->
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+</web-app>
